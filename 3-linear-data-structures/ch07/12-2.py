@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         profit = 0
-        min_price = sys.maxsize
+        min_price = sys.maxsize  # or prices[0]
 
         # 최소값과 최대값 계속 갱신
         for price in prices:
