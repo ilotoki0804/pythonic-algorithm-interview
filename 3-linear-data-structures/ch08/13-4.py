@@ -12,7 +12,13 @@ class Solution:
         # 런너를 이용해 역순 연결 리스트 구성
         while fast and fast.next:
             fast = fast.next.next
-            rev, rev.next, slow = slow, rev, slow.next
+
+            next_node = slow.next
+            previous_node = rev
+
+            rev = slow
+            rev.next = previous_node
+            slow = next_node
         if fast:
             slow = slow.next
 
