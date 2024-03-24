@@ -1,18 +1,12 @@
-import collections
-from typing import Deque
+from collections import deque
 
 
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        # 자료형 데크로 선언
-        strs: Deque = collections.deque()
+    def isPalindrome(self, string: str) -> bool:
+        chars = deque(char.lower() for char in string if char.isalnum())
 
-        for char in s:
-            if char.isalnum():
-                strs.append(char.lower())
-
-        while len(strs) > 1:
-            if strs.popleft() != strs.pop():
+        while len(chars) > 1:
+            if chars.popleft() != chars.pop():
                 return False
 
         return True
